@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mcheck 美化单选、多选框</title>
+    <link rel="stylesheet" href="../_css/base.css">
+    <link rel="stylesheet" href="../_css/mcheck.css">
+</head>
+<body>
+<div class="main">
+        <div class="checkbox-wrap">
+                <legend>你熟悉下列哪种语言?</legend>
+                <div class="custom-checkbox">
+                    <input type="checkbox" name="genre" id="action" value="action" class="checkedFocus">
+                    <label for="action" class="checked">c#</label>
+                </div>
+
+                <div class="custom-checkbox">
+                    <input type="checkbox" name="genre" id="comedy" value="comedy" class="checkedFocus">
+                    <label for="comedy" class="checked">Python</label>
+                </div>
+
+                <div class="custom-checkbox">
+                    <input type="checkbox" name="genre" id="check-3" value="epic" class="checkedFocus">
+                    <label for="check-3" class="checked">Java</label>
+                </div>
+
+                <div class="custom-checkbox">
+                    <input type="checkbox" name="genre" id="science" value="science">
+                    <label for="science" class="checked">C++</label>
+                </div>
+        </div>
+
+        <div class="radio-wrap">
+        <legend>小小球童是有史以来最伟大的电影，对不对？</legend>
+
+        <div class="custom-radio"><input type="radio" name="opinions" id="totally" value="totally"><label for="totally" class="">完全</label></div>
+
+
+        <div class="custom-radio">
+        <input type="radio" name="opinions" id="no-way" value="no-way" class="checkedFocus">
+        <label for="no-way" class="checked">您一定是在开玩笑</label>
+        </div>
+
+        <div class="custom-radio"><input type="radio" name="opinions" id="whats-caddyshack" value="whats-caddyshack" class="checkedFocus"><label for="whats-caddyshack" class="">小小球童是什么？</label></div>       
+        </div>
+</div>
+    <script type="text/javascript" data-main="../_js/main" src="../_js/require.js"></script>
+</body>
+</html>

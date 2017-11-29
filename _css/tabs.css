@@ -1,0 +1,85 @@
+/* tabs */
+.tabs{
+    margin:0 auto 20px;
+}
+.tabs ul{
+    overflow:hidden;
+}
+.tabs1 .nav{
+    margin-bottom:10px;
+}
+.tabs1 .nav li{
+    float:left;
+    margin:0 10px;
+    border-bottom:1px solid #fff;
+}
+.tabs1 .nav a{
+    display:block;
+    line-height:38px;
+}
+.tabs1 .nav .active{
+    border-bottom:1px solid #000;
+}
+.tabs1 .content{
+    height:240px;
+    color:#666;
+    overflow:hidden;
+}
+.tabs1 .content li{
+    height:240px;
+    background:#f4f4f4;
+}
+.tabs2{
+    width: 160px;
+}
+.tabs2 .content{
+    height: 120px;
+}
+.tabs2 .content li{
+    width: 160px;
+    height: 120px;
+    background: #ccc;
+}
+.tabs2 .nav,.tabs3 .nav{
+    margin: 3px 0;
+    text-align:center;
+}
+.tabs2 .nav li,.tabs3 .nav li{
+    display:inline-block;
+    width:12px;
+    height:12px;
+    background: #ccc;
+    margin-right:5px;
+}
+.tabs2 .nav li.active,.tabs3 .nav li.active{background:#ff0;}
+.tabs3 {
+    position: relative;
+    width: 220px;
+}
+.tabs3 .content{
+    width: 160px;
+    margin:0 auto;
+    height: 120px;
+}
+.tabs3 .content li{
+    width: 160px;
+    height: 120px;
+    background: #ccc;
+}
+.tabs3 .prev,.tabs3 .next{
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 118px;
+    background: #999;
+    border:1px solid #ccc;
+    text-align:center;
+    line-height:110px;
+    cursor:pointer;
+}
+.tabs3 .prev{
+    left:0;
+}
+.tabs3 .next{
+    right:0;
+}

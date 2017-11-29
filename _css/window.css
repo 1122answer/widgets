@@ -1,0 +1,107 @@
+/* window css */
+
+.window_boundingBox {
+    position: fixed;
+    z-index: 100;
+    border: 1px solid #eee;
+    width: 500px;
+    height: 300px;
+    -webkit-box-shadow: 0 0 12px rgba(0, 0, 0, .5);
+    -moz-box-shadow: 0 0 12px rgba(0, 0, 0, .5);
+    box-shadow: 0 0 12px rgba(0, 0, 0, .5);
+    background-color: #fff;
+}
+
+.window_boundingBox input {
+    padding: 4px 10px;
+    bottom: 10px;
+    left: 50%;
+    /* margin-left: -50px; */
+}
+
+.window_boundingBox .window_header {
+    height: 50px;
+    width: 100%;
+    background-color: #eee;
+    line-height: 50px;
+    text-align: center;
+}
+
+.window_boundingBox .window_body {
+    padding: 5px 10px;
+    text-align: center;
+}
+
+.window_closeBtn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 5px 10px;
+    font-size: 20px;
+    background-color: #222;
+    color: #fff;
+    cursor: pointer;
+}
+
+.window_mask {
+    width: 100%;
+    position: fixed;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .6);
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
+
+.window_footer {
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+.window_footer .window_cancelBtn {
+    margin-left: 20px
+}
+
+.window_boundingBox .BeAlert_image {
+    background: #fff;
+    width: 60px;
+    height: 60px;
+    margin: 20px auto;
+}
+
+.window_boundingBox .BeAlert_image.none {
+    display: none;
+}
+
+.window_boundingBox .BeAlert_image.warning {
+    background: url("../_images/warning.png");
+    -moz-background-size: 60px;
+    background-size: 60px;
+}
+
+.window_boundingBox .BeAlert_image.error {
+    background: url("../_images/error.png");
+    -moz-background-size: 60px;
+    background-size: 60px;
+}
+
+.window_boundingBox .BeAlert_image.info {
+    background: url("../_images/info.png");
+    -moz-background-size: 60px;
+    background-size: 60px;
+}
+
+.window_boundingBox .BeAlert_image.question {
+    background: url("../_images/question.png");
+    -moz-background-size: 60px;
+    background-size: 60px;
+}
+
+.window_boundingBox .BeAlert_image.success {
+    background: url("../_images/success.png");
+    -moz-background-size: 60px;
+    background-size: 60px;
+}
