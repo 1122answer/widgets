@@ -4,7 +4,7 @@
 ### 弹窗组件
 简介：支持皮肤，自定义事件，各种属性
 ```javascript
-new tabs("selector",options,callback(api));
+new window().alert(options);
 ```
 
 ### Tab标签
