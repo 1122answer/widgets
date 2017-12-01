@@ -25,5 +25,11 @@ new mcheck("selector",options);
 new select("selector",options);
 ```
 
+### 音乐播放器
+简介：自定义控制条，拖拽播放
+```javascript
+
+```
+
 
 
