@@ -24,7 +24,11 @@ new mcheck("selector",options);
 ```javascript
 new select("selector",options);
 ```
-
+### dataCheck-表单验证
+简介：自定义触发事件,自定义错误信息提示
+```javascript
+new dataCheck("selector",options);
+```
 ### 音乐播放器
 简介：自定义控制条，拖拽播放
 ```javascript

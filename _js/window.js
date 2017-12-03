@@ -47,9 +47,8 @@ define(['widget', 'jquery','jqueryUI'], function(widget, $,jUI) {
       if(this.cfg.hasCloseBtn) {
         var closeBtn = $('<span class="window_closeBtn">X</span>');
         closeBtn.appendTo(this.boundingBox);
-
       this.boundingBox.appendTo("body");
-
+      };
     },
     bindUI: function() {
       var that = this;

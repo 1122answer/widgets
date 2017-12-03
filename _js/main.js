@@ -5,7 +5,7 @@ require.config({
     }
 });
 
-require(['jquery', 'window', 'tabs', 'Selects', 'checks'], function($, w, t, s, m) {
+require(['jquery', 'window', 'tabs', 'Selects', 'checks','dataCheck'], function($, w, t, s, m ,d) {
     $("#a").click(function() {
         var win = new w.Window()
         win.alert({
@@ -80,5 +80,6 @@ require(['jquery', 'window', 'tabs', 'Selects', 'checks'], function($, w, t, s, 
 
     new s.SelectList('#choose2');
     new m.Mcheck('.checkbox-wrap input')
-    new m.Mcheck('.radio-wrap input')
+    new m.Mcheck('.radio-wrap input');
+    new d.DataCheck('form')
 })
