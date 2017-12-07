@@ -26,7 +26,6 @@ define(['jquery' ,'widget'], function($, widget) {
 		this.container = $(el)
 		this.params = $.extend({}, this.cfg, opts);
 		this.find = $(el).find('input');
-
 		this.render();
 	}
 
