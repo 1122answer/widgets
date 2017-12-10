@@ -5,9 +5,10 @@
     <title>tab标签切换</title>
     <link rel="stylesheet" href="../_css/base.css">
     <link rel="stylesheet" href="../_css/tabs.css">
+    
 </head>
 <body>
-      <div class="main">
+    <div class="main">
         <div class="tabs tabs1">
             <ul class="nav">
                 <li><a href="javascript:;">标签1</a></li>
@@ -16,10 +17,10 @@
                 <li><a href="javascript:;">标签4</a></li>
             </ul>
             <ul class="content">
-                <li>这里是内容1</li>
-                <li>这里是内容2</li>
-                <li>这里是内容3</li>
-                <li>这里是内容4</li> 
+                <li>这里是内容panel1 支持mouseenter触发</li>
+                <li>这里是内容panel2 触发前/后回调函数</li>
+                <li>这里是内容panel3</li>
+                <li>这里是内容panel4</li> 
             </ul>
         </div>
         <div class="tabs tabs3">
@@ -38,7 +39,86 @@
                 <li><a href="javascript:;"></a></li>
             </ul>
         </div>
-      </div>
+    
+
+      <div class="example">
+        <div class="call">
+            <h1>调用方法：</h1>
+            <p>new tabs(selector,{options});</p>
+        </div>
+        <h2>options参数</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th width="150">参数</th>
+                    <th width="80">默认值</th>
+                    <th>说明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>effect</td>
+                    <td>'none'</td>
+                    <td>切换的效果:'none'表直接切换,'fade'表淡入淡出效果</td>
+                </tr>
+                <tr>
+                    <td>triggerType</td>
+                    <td>'mouse'</td>
+                    <td>切换时的触发事件类型:"mouse"表鼠标移入时触发,"click"表示鼠标点击时触发</td>
+                </tr>
+                <tr>
+                    <td>triggerCondition</td>
+                    <td>*</td>
+                    <td>导航项的条件</td>
+                </tr>
+                <tr>
+                    <td>activeIndex</td>
+                    <td>0</td>
+                    <td>默认选中导航项的索引</td>
+                </tr>
+                <tr>
+                    <td>auto</td>
+                    <td>false</td>
+                    <td>是否自动播放</td>
+                </tr>
+                <tr>
+                    <td>delay</td>
+                    <td>3000</td>
+                    <td>自动播放时停顿的时间间隔</td>
+                </tr>
+
+            </tbody>
+        </table>
+        <h2>events事件</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th width="200">名称</th>
+                    <th>调用方式</th>
+                    <th>说明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>beforeEvent</td>
+                    <td>
+                        new tabs(selector,{beforeEvent:function(){ }});或
+                        new tabs(selector,{}).on('beforeEvent',function(){ });
+                    </td>
+                    <td>切换前callback</td>
+                </tr>
+                <tr>
+                    <td>afterEvent</td>
+                    <td>
+                       new tabs(selector,{afterEvent:function(){ }});或
+                       new tabs(selector,{}).on('afterEvent',function(){ });
+                    </td>
+                    <td>切换后callback</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    </div>
     <script type="text/javascript" data-main="../_js/main" src="../_js/require.js"></script>
 </body>
 </html>

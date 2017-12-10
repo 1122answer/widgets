@@ -1,7 +1,7 @@
 /* window css */
 
 .window_boundingBox {
-    position: fixed;
+    position: fixed!important;
     z-index: 100;
     border: 1px solid #eee;
     width: 500px;

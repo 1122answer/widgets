@@ -27,14 +27,14 @@ define(['widget', 'jquery','jqueryUI'], function(widget, $,jUI) {
       var footerContent = "";
       switch(this.cfg.winType) {
         case 'alert':
-          footerContent = '<input type = "button" value="' + this.cfg.text4AlertBtn + '" class="window_alertBtn">';
+          footerContent = '<input  type = "button" value="' + this.cfg.text4AlertBtn + '" class="btn btn-primary window_alertBtn">';
           break;
         case 'confirm':
-          footerContent = '<input type = "button" value="' + this.cfg.text4ConfirmBtn + '" class="window_confirmBtn"><input type = "button" value="' + this.cfg.text4CancelBtn + '" class="window_cancelBtn">';
+          footerContent = '<input  type = "button" value="' + this.cfg.text4ConfirmBtn + '" class="btn btn-primary window_confirmBtn"><input type = "button" value="' + this.cfg.text4CancelBtn + '" class="btn btn-primary window_cancelBtn">';
           break;
       }
       this.boundingBox = $('<div class="window_boundingBox">' +
-        '<div class="window_body"><div class="BeAlert_image"></div>' + this.cfg.content + '</div>' +
+        '<div class="window_body">' + this.cfg.content + '</div>' +
         '</div>');
       if(this.cfg.winType != "common") {
         this.boundingBox.prepend('<div class="window_header">' + this.cfg.title + '</div>')
@@ -98,7 +98,8 @@ define(['widget', 'jquery','jqueryUI'], function(widget, $,jUI) {
            }
       }
       if(this.cfg.type != 'none') {
-        this.boundingBox.find('.BeAlert_image').addClass(this.cfg.type)
+        this.boundingBox.find('.window_body').prepend('<div class="BeAlert_image"></div>')
+        this.boundingBox.find('.BeAlert_image').addClass(this.cfg.type);
       }
 
     },

@@ -5,13 +5,123 @@
     <title>web弹窗</title>
     <link rel="stylesheet" href="../_css/base.css">
     <link rel="stylesheet" href="../_css/window.css">
+      <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <body>
     <div class="main">
-        <input id="a" type="button" value="按钮">
-        <input id="b" type="button" value="确定弹窗">
-        <input id="c" type="button" value="通用弹窗">
-        <input id="d" type="button" value="警告">        
+        <button class="btn btn-success" id="a" type="button" value="">alert弹窗加回调函数</button>
+        <button class="btn btn-success"  id="b" type="button" value="">confirm弹窗没有关闭按钮</button>
+        <button class="btn btn-success"  id="c" type="button" value="">2s后消失通用弹窗</button>
+        <button class="btn btn-success"  id="d" type="button" value="">带图标警告</button>   
+
+          <div class="example">
+            <div class="call">
+                <h1>调用方法：</h1>
+                <p>new Window().alert(selector,{options});</p>
+            </div>
+            <h2>options参数</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th width="150">参数</th>
+                        <th width="80">默认值</th>
+                        <th>说明</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>width</td>
+                        <td>200</td>
+                        <td>窗体宽度</td>
+                    </tr>
+                    <tr>
+                        <td>height</td>
+                        <td>200</td>
+                        <td>窗体高度</td>
+                    </tr>
+                    <tr>
+                        <td>content</td>
+                        <td>“”</td>
+                        <td>窗体内容</td>
+                    </tr>
+                    <tr>
+                        <td>title</td>
+                        <td>'系统消息'</td>
+                        <td>标题</td>
+                    </tr>
+                    <tr>
+                        <td>hasCloseBtn</td>
+                        <td>false</td>
+                        <td>是否有关闭按钮</td>
+                    </tr>
+                    <tr>
+                        <td>text4AlertBtn</td>
+                        <td>''</td>
+                        <td>alert确定按钮文字</td>
+                    </tr>
+                    <tr>
+                        <td>hasMask</td>
+                        <td>true</td>
+                        <td>是否有遮罩层</td>
+                    </tr>
+                    <tr>
+                        <td>hasCloseBtn</td>
+                        <td>false</td>
+                        <td>是否有关闭按钮</td>
+                    </tr>
+                    <tr>
+                        <td>text4ConfirmBtn</td>
+                        <td>'确定'</td>
+                        <td>confirm确定按钮文字</td>
+                    </tr>
+                    <tr>
+                        <td>text4CancelBtn</td>
+                        <td>'取消'</td>
+                        <td>confirm取消按钮文字</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2>events事件</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th width="200">名称</th>
+                        <th>调用方式</th>
+                        <th>说明</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>hander4AlertBtn</td>
+                        <td>
+                            new Window().alert(selector,{hander4AlertBtn:function(){ }});
+                        </td>
+                        <td>alert点击确认按钮后callback函数</td>
+                    </tr>
+                    <tr>
+                        <td>handler4CloseBtn</td>
+                        <td>
+                           new Window().alert(selector,{handler4CloseBtn:function(){ }});
+                        </td>
+                        <td>alert点击取消按钮后callback函数</td>
+                    </tr>
+                    <tr>
+                        <td>handler4ConfirmBtn</td>
+                        <td>
+                            new Window().confirm(selector,{handler4ConfirmBtn:function(){ }});
+                        </td>
+                        <td>confirm点击确认按钮后callback函数</td>
+                    </tr>
+                    <tr>
+                        <td>handler4CancelBtn</td>
+                        <td>
+                           new Window().confirm(selector,{handler4CancelBtn:function(){ }});
+                        </td>
+                        <td>confirm点击取消按钮后callback函数</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>     
     </div>
     <script type="text/javascript" data-main="../_js/main" src="../_js/require.js"></script>
 </body>

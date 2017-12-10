@@ -9,18 +9,18 @@ require(['jquery', 'window', 'tabs', 'Selects', 'checks','dataCheck'], function(
     $("#a").click(function() {
         var win = new w.Window()
         win.alert({
-            title: '消息dd',
-            content: 'welcome!dd',
+            title: '系统弹窗消息',
+            content: 'JavaScript一种直译式脚本语言，是一种动态类型、弱类型、基于原型的语言，内置支持类型',
             handler4CloseBtn: function() {
                 alert("你点击了关闭按钮")
             },
             handler4AlertBtn: function() {
-                alert('你点击了确定')
+                alert('你点击了确定按钮')
             },
             width: 500,
-            height: 300,
+         
             hasCloseBtn: true,
-            text4AlertBtn: '残忍离去dd',
+            text4AlertBtn: '残忍离开',
             hasMask: true,
             dragHandle: '.window_header'
         })
@@ -33,12 +33,12 @@ require(['jquery', 'window', 'tabs', 'Selects', 'checks','dataCheck'], function(
     $('#b').click(function() {
         new w.Window().confirm({
             title: "系统消息",
-            content: "您确定要做出改变吗？",
+            content: "ECMAScript 6（以下简称ES6）是JavaScript语言的下一代标准，已经在2015年6月正式发布了",
             width: 500,
-            height: 300,
+           
             y: 50,
-            text4ConfirmBtn: '确定改变',
-            text4CancelBtn: '马上放弃',
+            text4ConfirmBtn: '确定学习',
+            text4CancelBtn: '暂不学习',
             dragHandle: ".window_header"
         }).on('confirm', function() {
             alert('你点击了确定按钮')
@@ -62,6 +62,7 @@ require(['jquery', 'window', 'tabs', 'Selects', 'checks','dataCheck'], function(
         new w.Window().confirm({
             content: '你确定要这样做吗？',
             width: 300,
+            height:235,
             text4ConfirmBtn: '确认',
             text4CancelBtn: '取消',
             type: 'warning'
@@ -76,7 +77,8 @@ require(['jquery', 'window', 'tabs', 'Selects', 'checks','dataCheck'], function(
     new t.tabs(".tabs3", {
         triggerType: 'click',
         activeIndex: 2,
-    });
+        auto:true
+    })
 
     new s.SelectList('#choose2');
     new m.Mcheck('.checkbox-wrap input')

@@ -10,9 +10,10 @@ define(['widget', 'jquery'], function(widget, $) {
             triggerType: 'mouse',
             triggerCondition: '*',
             activeIndex: '0',
-            auto: true,
+            auto: false,
             delay: 1000,
-            afterEvent: function() {}
+            afterEvent: null,
+            beforeEvent: null
         }
         this.params = $.extend({}, this.cfg, opts)
         this.container = $(el)
@@ -26,6 +27,7 @@ define(['widget', 'jquery'], function(widget, $) {
         this.triggerType = this.params.triggerType;
         this._hander = null;
         this.params.triggerType += this.params.triggerType === "mouse" ? "enter" : "";
+        this.onOff = false;
         this.render();
     }
 
@@ -56,12 +58,15 @@ define(['widget', 'jquery'], function(widget, $) {
             }, _this.params.delay)
         },
         setIndex: function(index) {
+        
             var _this = this;
             var panels = this.panels;
             var triggers = this.triggers;
             var effect = this.params.effect;
             switch(effect) {
                 case 'fade':
+
+                    if(_this.onOff) _this.fire('beforeEvent')
                     triggers.eq(index).addClass('active').siblings().removeClass('active')
                     panels.eq(index).css({
                         'z-index': 1
@@ -70,11 +75,14 @@ define(['widget', 'jquery'], function(widget, $) {
                     })
                     panels.eq(index).stop().fadeIn(300).siblings().stop().fadeOut(300);
                     _this._index = index;
+                    if(_this.onOff) _this.fire('afterEvent') 
                     break;
                 default:
+                   if(_this.onOff) _this.fire('beforeEvent') 
                     triggers.eq(index).addClass('active').siblings().removeClass('active')
                     panels.eq(index).show().siblings().hide();
                     _this._index = index;
+                    if(_this.onOff) _this.fire('afterEvent')  
             }
 
         },
@@ -82,7 +90,10 @@ define(['widget', 'jquery'], function(widget, $) {
             var _this = this;
             var triggers = this.triggers;
             if(this.params.afterEvent) {
-                this.on('after', this.params.afterEvent)
+                this.on('afterEvent', this.params.afterEvent)
+            }
+            if(this.params.beforeEvent) {
+                this.on('beforeEvent', this.params.beforeEvent)
             }
             triggers.each(function(i) {
                 var index = i
@@ -103,11 +114,13 @@ define(['widget', 'jquery'], function(widget, $) {
             if(this.prev) {
                 this.prev.on('click', function() {
                     _this.toPrev()
+                     
                 });
             }
             if(this.next) {
                 this.next.on('click', function() {
                     _this.toNext()
+                    
                 });
             }
         },
@@ -121,7 +134,9 @@ define(['widget', 'jquery'], function(widget, $) {
                     this.panels[i].style.position = "absolute"
                 }
             }
+
             this.setIndex(this._index);
+            _this.onOff = true
         }
 
     })
